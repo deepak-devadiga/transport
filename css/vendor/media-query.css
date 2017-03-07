@@ -1,0 +1,636 @@
+@media only screen and (max-width : 992px) {
+	/*.form-tabList{
+		width:10%;
+	}
+	.form-tabSection{
+		width:90%;
+	}*/
+	#self-SSN-text{
+		width: 72%;
+	}
+	.product-details-box{
+		border-left: 0px;
+		border-top: 1px solid;
+	}
+	.MQPL-0{
+		padding-left:0px;
+	}
+	.life-ins-prod > .sel-product:nth-child(even),.disability-ins-prod > .sel-product:nth-child(even),.expense-ins-prod > .sel-product:nth-child(even){
+		padding-right:15px;
+	}
+    .applyNow-btn-sec{
+        width:40%;
+    }
+}
+
+@media only screen and (max-width : 980px) {
+	.form-tabList{
+		width: 10.333%;
+	}
+	.form-tabSection,.top-alertInfo{
+		width: 89.667%;
+	}
+	.applyNow-btn-wrapper {
+		width:100%;
+		padding-left:15px;		
+	}
+}
+
+@media only screen and (max-width : 878px) {
+	.form-tabList{
+		width: 11.667%;
+	}
+	.form-tabSection,.top-alertInfo{
+		width: 88.333%;
+	}
+}
+
+@media only screen and (max-width : 800px) {
+	.product-details-box{
+		border-left: 0px;
+		border-top: 1px solid;
+	}
+    .consent-chk {
+       margin-left: 70px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+	.form-tabList{
+		width: 15%;
+	}
+	.form-tabSection{
+		width: 85%;
+	}
+	.btn-cancel, .btn-success {
+		min-width: 110px;
+	}
+	#tools-resources-sec .modal-header .close {
+		right: -8px;
+		top: -5px;
+		padding: 3px 6px;
+	}
+    .top-alertInfo-sec{
+        padding-left: 15px;
+    }
+	.top-alertInfo{
+		float:none;
+		width:100%;
+	}
+	#self-SSN-text{
+		width: 100%;
+	}
+	.row-content .col-xs-12,.ques-input-width,.contentWidth.col-xs-12{
+		width: 50%;
+	}
+	/*.form-tabList{
+		width:16%;
+	}
+	.form-tabSection{
+		width:84%;
+	}*/
+	.Life-ques-sec .visible-xs,.disb-ques-sec .visible-xs{
+		display: inline-block !important;
+	}
+	.answer-sec{
+		text-align:left;
+	}
+	.show-on-xs{
+		color:#62676A;
+		width:65px;
+	}
+	.product-details-box{
+		border-left: 0px;
+		border-top: 1px solid;
+	}
+	.life-ins-prod > .sel-product,.disability-ins-prod > .sel-product,.expense-ins-prod > .sel-product{
+		padding-right:15px;
+	}
+	
+	.modal-dialog{
+        width: 95%;
+	}
+	#tools-resources-sec .modal-body video{
+		width:100%;
+	}
+	/*Footer*/
+	.page-fat-footer,.footer-sec{
+		padding:15px;
+	}
+	.footer-sec:not(:nth-child(3)){
+		width:32%;
+	}
+	.footer-sec:nth-child(3){
+		width:36%;
+	}
+	/*End of footer*/	
+/*
+	.landing-pg-left-sec,.landing-pg-center-sec,.landing-pg-right-sec{
+		padding-left:0px;
+		padding-right:0px;
+	}
+*/
+    label.landingpage-image {
+        font-size: 22px;
+    }
+	.applyNow-btn-sec {
+		width: 50%;
+		bottom:8px;
+	}
+	.applyNow-btn-sec  h2{
+		font-size:24px;
+	}
+	.applyNow-btn-sec .btn{
+		padding: 6px 12px;
+	}
+	.applyNow-btn-sec > h2 > label {
+		margin-bottom: 10px;
+	}
+	
+	/*********save for later page*********/
+	.passwd1 input[type=password],.confirmPwd input[type=password],.pwd-tooltip-sec{
+		width:50%;
+	}
+	/*************preview page************/
+	/* .prd-details label{
+		font-weight:bold;
+	} */
+	/* .product-header {
+		bottom: 8px;
+	} */
+	/*******Submit******/
+	#submitTab .quesHeader-icon{
+		display:block;
+		padding-bottom:15px;
+        text-align: center;
+	}
+	/*****end of submit*****/
+	/*****Eligibility*****/
+	#add-child-modal .btn-group{
+		margin-bottom:20px;
+	}
+	.question-radio{
+		text-align:center;
+		margin-top: 15px;
+	}
+	#healthQuestionsTab .form-horizontal{
+		padding-left: 65px;
+	}
+	.btnRadio-sec {
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+	.btn-selectgreen {
+		padding: 11px;
+	}
+	/*********Coverage*********/
+	.media-coverage-title-bold{
+		font-weight:bold;
+	}
+	#coverageTab .disability-benefit .max-benf-amt{
+		margin-left:0px;
+		display:block;
+	}
+    .MQT-40-0{
+        margin-top:0px;
+    }
+	/*******End of coverage*******/
+	.icon-coverage-elegible {
+		font-size: 28px;
+/*		padding: 9px 12px 0;*/
+        display: table-cell;
+        vertical-align: middle;
+	}
+    .quesHeader-icon > span{
+        padding:5px 0px;
+    }
+    .self-preview-sec .quesHeader-icon > span, .spouse-preview-sec .quesHeader-icon > span, .child-preview-sec .quesHeader-icon > span{
+        padding:5px 0px;
+    }
+
+}
+
+@media only screen and (max-width : 767px) {
+	.consent-chk {
+        margin-left: 0px;
+    }
+    .submit-form-sec{
+        padding:0px;
+    }
+    .play-video-icon {
+        left: 49%;
+        top: 45%;
+    }
+    .landing-pg-left-sec, .landing-pg-center-sec, .landing-pg-right-sec {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .pwd-tooltip-sec {
+        margin: 10px 0px 15px;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+	.form-tabList{
+		width: 19%;
+	}
+	.form-tabSection{
+		width: 81%;
+	}
+	.common-inner-sec{
+		margin-left:0px;
+	}
+	/*Footer*/
+	.page-fat-footer,.footer-sec{
+		padding:15px;
+	}
+	.footer-sec{
+		width:100% !important;
+		margin-bottom:0px;
+	}
+	.footer-sec:nth-child(2){
+	border:0px;
+	}
+	.footer-sec:not(:nth-child(1)){
+		border-top:1px solid #FFF;
+	}
+	/*End of footer*/
+	#consentModal .modal-body {
+		padding: 15px 35px;
+	}
+	#beneficiariesTab .nav-tabs > li > a {
+		padding:10px;
+	}	
+	.show-on-xs-for-btn{
+		display:block !important;
+	}
+	.form-bottom-btn .btn-cancel{
+		float:right;
+	}
+	.saveforLater-btn{
+		float: left !important;
+		margin: 10px 0px 0px 0px;
+	}
+	.next-btn{
+		margin-top: 10px;
+	}
+	/*******product page*****/
+	.product-header{
+		bottom:0px;
+		margin-left:0px;
+	}
+	/* .prod-img{
+		height:70px;
+	} */
+	.product-header h3{
+		font-size:16px;
+	}
+	/*****end of product page****/
+	/********preview********/
+	#previewTab .ques-subHeader-title h3 label{
+		font-size:18px;
+	}
+	.preview-sub-section{
+		font-size:16px;
+	}
+	.preview-sub-section .preview-sub-section-title,.preview-info-sec{
+		width:100%;
+		padding-left:15px;
+        margin-left: 0px;
+	}
+	.preview-sub-section .preview-sub-section-title{
+		padding-right:15px;
+	}
+	/******End of preview******/
+	/**********Payment********/
+	.billing-box {
+		margin-left: 10px;
+	}
+	/*******End of payment********/
+	/*****Beneficiary******/
+	.skip-Tab{
+		display: block;
+		float: none;
+		font-size:16px
+	}
+	/****end of beneficiary******/
+	#spouse-delete-alert-modal .btn-cancel{
+		float:none;
+	}
+    .confirmationModal .modal-dialog {
+        width: auto;
+        margin: 10px;
+    }
+    .applyNow-btn-sec{
+        width: 50%;
+        bottom:0px;
+    }
+    .applyNow-btn-sec > h2 > label{
+        font-size:24px;
+    }
+    .applyNow-btn-sec .btn{
+        font-size:16px;
+    }
+    .play-video-icon {
+        left: 45%;
+        top: 42%;
+    }
+    .landing-modal.modal-header .modal-title,.landing-modal.modal-header > .close {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+	/* body{
+		font-size:12px;
+	} */
+	/* body.landing-pg-body {
+		background: url("../images/u73.jpg") no-repeat scroll 0 147px / 100% auto rgba(0, 0, 0, 0);
+	} */
+	.btn-cancel, .btn-success {
+		min-width: 80px;
+	}
+	.tbl-addBtn{
+		font-size: 13px;
+	}
+	.add-btn-txt{
+		padding:0px 2px;
+	}
+    .tbl-addBtn .add-btn-icon i {
+        right: 0px;
+    }
+	.add-btn-icon{
+		padding:1px 4px;
+	}
+	/*****Header*****/
+
+	.header-logo,.main-header .ques-sub-header,.main-header .ques-sub-header > .pull-right{
+		float: none !important;
+		padding-left:0px;
+	}
+	header .quesHeader-icon > span {
+		font-size: 16px;
+		padding: 2px 7px;
+	}
+	header .ques-subHeader-title label {
+		font-size: 16px;
+	}
+    header .quesHeader-icon > span {
+        text-align: center;
+         padding-top: 4px;
+    }
+	/****End of Header****/
+	/********Beneficiary ********/
+	.beneficiary-prd-title,.term-title h3{
+		font-size:16px;
+	}
+	/********end of beneficiary *********/
+	.tab-internal-sec {
+		padding: 0 5px;
+	}
+	.mainTabHeader {
+		font-size: 19px;
+	}
+	/* .form-tabList{
+		width:64px;
+	}
+	.form-tabSection{
+		width: -webkit-calc(100% - 64px);
+		width: -moz-calc(100% - 64px);
+		width: calc(100% - 64px);
+	} */
+	.nav > .tab-content > a {
+		font-size: 30px;
+		padding: 5px;
+	}
+	.tab-name{
+        /*display:none;*/
+        font-size: 9px;
+	}
+	.row-content .col-xs-12,.ques-input-width,.contentWidth.col-xs-12{
+		width: 100%;
+	}
+	.form-tabList > .nav-stacked > li > a {
+        width: 52px;
+	}
+	/*.form-tabSection{
+		width:79%;
+	}*/
+	.btnRadio{
+		margin:10px 6px 5px;
+		padding:10px;
+	}
+	.ques-subHeader-title{
+		font-size:14px;
+	}
+	.product-details-box{
+		border-left: 0px;
+		border-top: 1px solid;
+	}
+	.prod-chk-btn-sec {
+	  width: 100% !important;
+	  text-align:left;
+	}
+	.plan-info{
+		padding-top:10px;
+	}
+	#paymentTab .ques-subHeader-title {
+		font-size: 18px;
+	}
+	 .applyNow-btn-sec {
+		width: 60%;
+		margin-left:0px;
+		bottom:0px;
+		padding: 0 5px;
+	}
+	.applyNow-btn-sec > h2 > label {
+        font-size: 22px;
+        margin-bottom: 0;
+	}
+	/*********save for later page*********/
+	.passwd1 input[type=password],.confirmPwd input[type=password],.pwd-tooltip-sec{
+		display:block;
+		width:100%;
+	}
+	.passStrengthify{
+		margin-left:0px;
+		position: relative;
+		top: 5px;
+	}
+	/*********End of Save for later page***********/
+	.applyNow-btn-sec  h2{
+		font-size:20px;
+	}
+	.applyNow-btn-sec .btn {
+		padding: 3px 12px;
+	}
+	.slider-wrap{
+		margin-top:33px;
+		margin-left:20px;
+		margin-bottom:20px;
+	}
+	.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+	.quesHeader-icon > span {
+		font-size: 25px;
+/*		padding: 5px 8px 1px 8px;*/
+	}
+	.ques-subHeader-title label {
+		font-size: 18px;
+	}
+	.ques-subHeader-title {
+		font-size: 16px;
+	}
+	.term-title h3{
+		font-size: 18px;
+	}
+	.term-desc ol {
+		padding: 0px;
+		font-size: 14px;
+	}
+
+	#coverageTab .form-group{
+		font-size:14px;
+	}
+	#coverageTab .panel-title{
+		font-size: 16px;
+	}
+	.top-buffer {
+		margin-top: 10px;
+	}
+	.question-radio{
+		margin-top:15px;
+		padding-left:60px;
+	}
+	#healthQuestionsTab .form-horizontal{
+		padding-left: 65px;
+	}
+	.question-num > span {
+	  font-size: 15px;
+	  padding: 1px 8px 1px 8px;
+	}
+	/******submit********/
+	#submitTab .quesHeader-icon{
+		text-align:center;
+	}
+	/*******End of submit******/
+	/********Eligibility*******/
+	.btnRadio-sec{
+		padding:0px;
+	}
+	.btn-selectgreen {
+		padding:8px 5px 8px;
+	}
+	.icon-coverage-elegible {
+		font-size: 25px;
+		display: table-cell;
+        vertical-align: middle;
+	}
+	#spouse-delete-alert-modal .modal-dialog {
+	  width: 300px;
+	}
+	/********Bootstrap*****/
+	.form-tabSection .modal-body {
+		padding: 15px 25px;
+	}
+    .form-tabList{
+        padding-left:10px;
+    }
+    .form-tabSection{
+        padding-right: 10px;
+    }
+    .productCoverageLabel {
+        font-size: 14px;
+    }
+    .prod-img{
+		height:70px;
+	}
+    .break-btnTxt{
+        display:block;
+    }
+    #landing-Region #ApplyNow-sec-button{
+        min-width: 100%;
+    }
+    #ApplyNow-sec-modal .modal-title{
+    font-size:20px;
+    }
+    #ApplyNow-sec-modal .modal-body{
+        font-size:14px;
+    }
+	.modal-header > .modal-title, .modal-header > .close {
+        font-size: 24px;
+	}
+}
+
+@media only screen and (max-width: 400px)  {
+    a#idExistingApplicant{
+        padding-left: 5px;
+    }  
+    .applyNow-btn-sec > h2 > label {
+		margin-bottom: 0px;
+	}
+    .lending-page-bg{
+        background-image: none !important;
+        padding-top: 45%;
+    } 
+}
+
+@media only screen and (max-width : 360px) {
+
+	.product-details-box{
+		border-left: 0px;
+		border-top: 1px solid;
+	}
+	.MQML-0{
+		margin-left:0px !important;
+	}
+	.prod-wrap, .prod-wrap-2, .prod-wrap-3{
+		padding-bottom:40px;
+	}
+	#productsTab .btnRadio-sec {
+		padding-left: 0px;
+	}
+    .applyNow-btn-sec {
+		width: 90%;
+		margin-left:0px;
+		bottom:0px;
+		padding: 0 5px;
+	}
+    .applyNow-btn-sec h2{
+        margin-bottom: 0;
+        
+    }
+	.applyNow-btn-sec > h2 > label {
+		margin-bottom: 5px;
+        font-size: 20px;
+	}
+    .applyNow-btn-sec .btn-group-justified > .btn-group .btn{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    a#idExistingApplicant{
+        float:left;
+    }
+     .play-video-icon {
+        left: 40%;
+        top: 35%;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+	.product-details-box{
+		border-left: 0px;
+		border-top: 1px solid;
+	}
+}
+
+@media only screen and (min-width : 980px) {
+	.container-fluid{
+		margin-left: auto;
+		margin-right: auto;
+		width: 980px;
+	}
+}
+
