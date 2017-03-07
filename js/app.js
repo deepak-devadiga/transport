@@ -1,4 +1,4 @@
-$(document).load(function() {
+$(document).ready(function() {
     $('#loader').fadeIn(500).hide(0);
     $('#landing_page').fadeIn(1000).show(0);
     jQuery.validator.addMethod("lettersonly", function(value, element) {
