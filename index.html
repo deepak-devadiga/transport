@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>Deepak project</title>
+
+    <!-- CSS PLUGINS SECTION--->
+    <link rel="stylesheet" href="css/vendor/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/zebra_dialog.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <!-- CSS PLUGINS SECTION--->
+
+</head>
+
+<body>
+    <img src='images/ripple.gif' id='loader' />
+    <div class='mobile_device_error hide'>
+        <div class='msg text-center'>
+            <span class=''>
+				<i class="fa fa-chain-broken fa-4x" aria-hidden="true"></i><br>
+				This site is compatible only in desktop browsers!!!
+			</span>
+        </div>
+    </div>
+    <div class='container-fluid' id='landing_page' style='display:none'>
+        <div class='row'>
+            <div class='col-sm-7 col-md-7 col-lg-7' id='landing_left'>
+
+            </div>
+            <div class='col-sm-5 col-md-5 col-lg-5' id='landing_right' ng-controller='LoginController as login_ctrl'>
+                <form name='login' class="form-signin" method="post" action="" id="form-signin" ng-submit='login.$valid && login_ctrl.addLogin()'>
+                    <div id='company_logo'>
+                        <img src='images/company_logo.png' alt='Company Logo' class='img-responsive'>
+                    </div>
+                    <h2 class="form-signin-heading">Company Portal Sign In</h2>
+                    <br>
+                    <br>
+                    <div class="control-group">
+                        <label class="control-label" for="login">Login id:</label>
+                        <div class="controls">
+                            <input ng-model="login_ctrl.detail.login" size="50" name="login" id="login" value="" type="text" class="form-control" placeholder="Login">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="password">Password:</label>
+                        <div class="controls">
+                            <input ng-model="login_ctrl.detail.password" size="50" name="password" id="password" value="" type="password" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+                    <label class="checkbox">
+            <input type="checkbox" name="save" value="">Remember me</label>
+                    <button name="submit" id="submit1" value="" type="submit" class="btn btn-md btn-primary btn-block sharp">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <div class='row' id='status_board1' style='display:none;position: fixed;width:100vw'>
+            <div class='nav navbar' id='status_board'>
+                <div class='col-sm-8 col-md-8 col-lg-8'>
+                    <div id='company_logo' style='display:inline-block;align: center;vertical-align: middle;'>
+                        <img src='images/company_logo.png' alt='Company Logo' height='120' width='120' class='img-responsive'>
+                    </div>
+                    <div style="display:inline-block;vertical-align: middle;">
+                        Company Name
+                    </div>
+                </div>
+                <div class='col-sm-4 col-md-4 col-lg-4 text-center'>
+                    <div id='company_logo' style='display:inline-block;align: center;vertical-align: middle;'>
+                        <img src='images/user_login.png' alt='Company Logo' height='70' width='70' class='img-responsive'>
+                    </div>
+                    <div style="display:inline-block;vertical-align: middle;font-size:1.5em">
+                        Welcome User! <a href='#' id='logout' style='text-decoration:none'><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='container' id='page1' style='margin-top:150px; display:none; width:90%'>
+        <div class='row'>
+            <div class='col-sm-3 col-md-3 col-lg-3' id='left_tab' style='font-size:1.2em'>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#tab_a" data-toggle="pill" class='pills_tab'>Transportation Details</a></li>
+                    <li><a href="#tab_b" data-toggle="pill" class='pills_tab'>Transportation Details Preview</a></li>
+                    <li><a href="#tab_c" data-toggle="pill" class='pills_tab'>Pill C</a></li>
+                    <li><a href="#tab_d" data-toggle="pill" class='pills_tab'>Pill D</a></li>
+                </ul>
+            </div>
+            <div class='col-sm-1 col-md-1 col-lg-1'></div>
+            <div class="tab-content col-sm-8 col-md-8 col-lg-8 tab_content" id='style-4'>
+                <div class="tab-pane active " id="tab_a" ng-controller='TransportDetails as trans_details'>
+                    <h4>Transportation Details</h4>
+                    <p>Please enter all the transportation details and save it.</p>
+                    <form name='transport' class="form-item" method="post" action="" id="form-item" >
+                        <div class='row'>
+                            <div class="control-group col-sm-6 col-md-6 col-lg-6">
+                                <label class="control-label" for="source">Source:</label>
+                                <div class="controls">
+                                    <input ng-model="trans_details.detail.source" size="50" name="source" id="source" value="" type="text" class="form-control" placeholder="Source">
+                                </div>
+                            </div>
+                            <div class="control-group col-sm-6 col-md-6 col-lg-6">
+                                <label class="control-label" for="destination">Destination:</label>
+                                <div class="controls">
+                                    <input ng-model="trans_details.detail.destination" size="50" name="destination" id="destination" value="" type="text" class="form-control" placeholder="Destination">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label" for="box">Number of boxes:</label>
+                                <div class="controls">
+                                    <input ng-model="trans_details.detail.box" size="5" name="box" id="box" value="" type="number" class="form-control" placeholder="Box" ng-change="trans_details.updatePrice(trans_details.detail.box)">
+                                </div>
+                            </div>
+                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label" for="cartoon">Number of Cartoons:</label>
+                                <div class="controls">
+                                    <input ng-model="trans_details.detail.cartoon" size="5" name="cartoon" id="cartoon" value="" type="number" class="form-control" placeholder="Cartoon" ng-change="trans_details.updatePrice(trans_details.detail.cartoon)">
+                                </div>
+                            </div>
+                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                                <label class="control-label" for="perCost">Cost per Box/Cartoon:</label>
+                                <div class="controls textToLabel form-inline" style='margin-top:-5px'>
+                                    <i class='fa fa-inr fa-2x'></i><input ng-model="trans_details.detail.preCost" size="5" name="perCost" id="perCost" value="" ng-bind="{{trans_details.perCost}}" type="text " class="form-control " placeholder="0&#8377;" style='font-size:2em' disabled>
+								</div>
+							</div>
+						</div>
+						<div class='row'>
+							<div class="control-group col-sm-6 col-md-6 col-lg-6 ">
+								<label class="control-label " for="totalCost " style='font-size:2em; color:red'>Total Cost:</label>
+								<div class="controls textToLabel form-inline ">
+									<i class='fa fa-inr fa-3x'></i><input ng-model="trans_details.detail.totalCost" size="5 " name="totalCost " id="totalCost " value=""  type="text" class="form-control" placeholder="0" style='font-size:4em; margin-top:-15px' disabled>
+                                </div>
+                            </div>
+                            <div class="control-group col-sm-6 col-md-6 col-lg-6" style='margin-top:55px !important'>
+                                <button  ng-click='trans_details.addTransDetails()' name="button" id="addItem" value="" type="submit" class="btn btn-md btn-primary btn-block sharp">Add</button>
+                            </div>
+						</div>
+                    </form>
+                </div>
+                <div class="tab-pane " id="tab_b">
+                    <h4>Transportation List</h4>
+					 <div ng-controller='TransportList as trans_list'>
+						
+						<table datatable="ng" class="table table-hover table-bordered" ng-controller="TransportList as trans_list">
+							<thead class="thead-inverse">
+								<th>Source</th>
+								<th>Destination</th>
+								<th>Box/s</th>
+								<th>Cartoon/s</th>
+								<th>Cost per box/cartoon</th>
+								<th>Total Cost</th>
+							</thead>
+							<tbody ng-repeat="trans in trans_list.trans_lists track by $index">
+								<tr>
+									<td>{{trans.source}}</td>
+									<td>{{trans.destination}}</td>
+									<td>{{trans.box}}</td>
+									<td>{{trans.cartoon}}</td>
+									<td>{{trans.preCost}}</td>
+									<td>{{trans.totalCost}}</td>
+								</tr>
+								<tr ng-show="item.warning">
+									<td colspan="3" style="text-align: center">Warning !!!</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> 
+                </div>
+                <div class="tab-pane " id="tab_c">
+                    <h4>Pane C</h4>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+                <div class="tab-pane " id="tab_d">
+                    <h4>Pane D</h4>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style='display:none'>
+        <div class="container">
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-lg-3 text-center'>
+                    <h3 style='color:#006600; font-family:noodle'>Connect Us</h3>
+                    <span><i class='fa fa-facebook-square fa-2x'></i> <i class='fa fa-twitter-square fa-2x'></i> <i class='fa fa-linkedin-square fa-2x'></i></span>
+                </div>
+                <div class='col-md-6 col-sm-6 col-lg-6 text-center'>
+                    <h3 style='color:#006600;font-family:noodle;'>About Company</h3>
+                    <p>Company based in Mumbai with active and talented freelancers providing technology support for startup companies.</p>
+                    <span style='color:red;'><i>Copyrights reserved by Deepak &copy; 2017</i></span>
+                </div>
+                <div class='col-md-3 col-sm-3 col-lg-3 text-center'>
+                    <h3 style='color:#006600;font-family:noodle;'>Contact Us</h3>
+                    <p><span><i class='fa fa-phone-square'></i> +91 7045880819</span></p>
+                    <p><span><i class='fa fa-envelope-square'></i> deepucsait@gmail.com</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src='js/vendor/jquery.js'></script>
+<script src='js/vendor/bootstrap.js'></script>
+<script src='js/vendor/jquery-ui.js'></script>
+<script src='js/vendor/angular.min.js'></script>
+<script src='js/vendor/jquery.validate.min.js'></script>
+
+
+<script src='js/vendor/app.js'></script>
+<script src='js/controller.js'></script>
+
+</html>
