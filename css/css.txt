@@ -1,0 +1,1 @@
+Conatins CSS stylings defined in the project
