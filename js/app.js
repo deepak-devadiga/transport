@@ -40,7 +40,7 @@ $(document).load(function() {
             $('#page1').fadeIn(1000).show();
             $('#footer').fadeIn(1000).show();
 
-            return false; //This doesn't prevent the form from submitting.
+            return false; 
         }
     });
 
