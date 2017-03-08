@@ -1,6 +1,24 @@
 $(window).on('load', function() {
     $('#loader').fadeIn(500).hide(0);
     $('#landing_page').fadeIn(1000).show(0);
+	
+	
+	
+	
+	$("#page_button").click(function() {
+					$('html, body').delay(1000).animate({
+						scrollTop: $("#page1").offset().top
+					}, 1000);
+				});
+	
+	
+	
+  
+  
+  
+  
+  
+  
     jQuery.validator.addMethod("lettersonly", function(value, element) {
         return this.optional(element) || /^[a-z0-9_-]+$/i.test(value);
     }, "Please use only a-z0-9_-");
@@ -37,7 +55,7 @@ $(window).on('load', function() {
             $('#landing_left').fadeIn(1000).hide();
             $('#landing_right').fadeIn(1000).hide();
             $('#status_board1').slideDown("slow");
-            $('#page1').fadeIn(1000).show();
+            $('#page').fadeIn(1000).show();
             $('#footer').fadeIn(1000).show();
 
             return false; //This doesn't prevent the form from submitting.
@@ -45,7 +63,20 @@ $(window).on('load', function() {
     });
 
 
-
+$("#box").blur(function(){
+	if($('#box').val() > 0){
+		$('#cartoon').prop('disabled', true);
+	}else{
+		$('#cartoon').prop('disabled', false);
+	}
+});
+$("#cartoon").blur(function(){
+	if($('#cartoon').val() > 0){
+		$('#cartoon').prop('disabled', true);
+	}else{
+		$('#cartoon').prop('disabled', false);
+	}
+});
 
     $('#addItem').click(function(e) {
         e.preventDefault();
