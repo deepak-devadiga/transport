@@ -19,13 +19,10 @@
 			transport_list.push(this.detail);
 			localStorage.setItem('transport_DB', JSON.stringify(transport_list));
 			this.detail = {};
-			this.detail.preCost = 250;
         };
-        this.detail.preCost = 250;
-		
-		
-		
+		var content;
         this.updatePrice = function(item) {
+			content = item;
             if (item != undefined) {
                 this.detail.totalCost = item * this.detail.preCost;
             } else {
@@ -33,6 +30,14 @@
             }
 
         }
+		
+		this.updatePerCost = function(item){
+			 if (item != undefined) {
+                this.detail.totalCost = item * content;
+            } else {
+                this.detail.totalCost = 0;
+            }
+		}
 		
 		this.disable = function(item, e){
 			if(item >0  && e == 1){
