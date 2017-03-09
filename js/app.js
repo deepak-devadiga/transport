@@ -8,8 +8,8 @@ $(window).on('load', function() {
 	$("#page_button").click(function() {
 		
 		if($('#transport').hasClass('active1') || $('#commission').hasClass('active1')){
-			$('#page_edit').fadeOut(200).show(500);
-			$('#page_button').fadeIn(200).hide(500);
+			$('#page_edit').fadeIn(200).show(500);
+			$('#page_button').fadeOut(200).hide(500);
 			$('#transport').css('border','none');
 			$('#commission').css('border','none');
 			$('#transport').css('filter','grayscale(100%)');
