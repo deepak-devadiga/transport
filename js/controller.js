@@ -84,7 +84,7 @@
 		}
 		
 		this.editPage = function(){
-			$('#page_edit').fadeIn(200).hide(500);
+			$('#page_edit').fadeOut(200).hide(500);
 			$('#page_edit').css('filter','grayscale(0)');
 			$('#page_button').fadeIn(200).show(500);
 			$('#transport').css('border','none');
