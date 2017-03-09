@@ -6,9 +6,39 @@ $(window).on('load', function() {
 	
 	
 	$("#page_button").click(function() {
-					$('html, body').delay(1000).animate({
+		
+		if($('#transport').hasClass('active1') || $('#commission').hasClass('active1')){
+			$('#page_edit').fadeIn(200).show(500);
+			$('#page_button').fadeIn(200).hide(500);
+			$('#transport').css('border','none');
+			$('#commission').css('border','none');
+			$('#transport').css('filter','grayscale(100%)');
+			$('#commission').css('filter','grayscale(100%)');
+			$('#page').css('filter','grayscale(0)');
+				$('#transport').css('cursor','default');
+				$('#commission').css('cursor','default');
+				document.getElementById('transport').style.pointerEvents = 'none';
+				document.getElementById('commission').style.pointerEvents = 'none';
+				$('#page_button').prop('disabled',true);
+				$('#page1').css('display','block');
+					$('html, body').delay(500).animate({
 						scrollTop: $("#page1").offset().top
 					}, 1000);
+		}else{
+			$('#transport').css('border','1px solid red');
+			$('#commission').css('border','1px solid red');
+			$('#transport').css('filter','grayscale(0)');
+			$('#commission').css('filter','grayscale(0)');
+			
+			$('#page').css('filter','grayscale(0)');
+				$('#transport').css('cursor','pointer');
+				$('#commission').css('cursor','pointer');
+				document.getElementById('transport').style.pointerEvents = 'auto';
+				document.getElementById('commission').style.pointerEvents = 'auto';
+				$('#page_button').prop('disabled',false);
+				
+				$('#page1').css('display','none');
+		}
 				});
 	
 	
