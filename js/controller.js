@@ -83,5 +83,22 @@
 				
 		}
 		
+		this.editPage = function(){
+			$('#page_edit').fadeIn(200).hide(500);
+			$('#page_edit').css('filter','grayscale(0)');
+			$('#page_button').fadeOut(200).show(500);
+			$('#transport').css('border','none');
+			$('#commission').css('border','none');
+			$('#transport').css('filter','grayscale(0)');
+			$('#commission').css('filter','grayscale(0)');
+			$('#page').css('filter','grayscale(0)');
+				$('#transport').css('cursor','pointer');
+				$('#commission').css('cursor','pointer');
+				document.getElementById('transport').style.pointerEvents = 'auto';
+				document.getElementById('commission').style.pointerEvents = 'auto';
+				$('#page_button').prop('disabled',false);
+				$('#page1').css('display','none');
+		}
+		
 	});
 })();
