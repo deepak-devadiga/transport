@@ -1,148 +1,102 @@
-$(window).on('load', function() {
-    $('#loader').fadeIn(500).hide(0);
-    $('#landing_page').fadeIn(1000).show(0);
-	
-	
-	
-	
-	$("#page_button").click(function() {
+(function() {
+    var app = angular.module('myApp', []);
+	var transport_list = (JSON.parse(localStorage.getItem('transport_DB')) === null) ? [] : JSON.parse(localStorage.getItem('transport_DB'));
+    app.controller('LoginController', function() {
+        console.log("Login Controller Initialized");
+        this.detail = {};
+        this.addLogin = function() {
+            console.log("Inside Add Login Function");
+            console.log(this.detail);
+        };
+    });
+    app.controller('TransportDetails', function($scope) {
+        console.log("Transport Details Initialized");
+        this.detail = {};
+		if(this.detail.box > 0){
+			this.cartoon = true;
+		}
+        this.addTransDetails = function() {
+			transport_list.push(this.detail);
+			localStorage.setItem('transport_DB', JSON.stringify(transport_list));
+			this.detail = {};
+        };
+		var content;
+        this.updatePrice = function(item) {
+			content = item;
+            if (item != undefined) {
+                this.detail.totalCost = item * this.detail.preCost;
+            } else {
+                this.detail.totalCost = 0;
+            }
+
+        }
 		
-		if($('#transport').hasClass('active1') || $('#commission').hasClass('active1')){
-			$('#page_edit').fadeIn(200).show(500);
-			$('#page_button').fadeOut(200).hide(500);
-			$('#transport').css('border','none');
-			$('#commission').css('border','none');
+		this.updatePerCost = function(item){
+			 if (item != undefined) {
+                this.detail.totalCost = item * content;
+            } else {
+                this.detail.totalCost = 0;
+            }
+		}
+		
+		this.disable = function(item, e){
+			if(item >0  && e == 1){
+				this.disable_cartoon = true;
+			}else if(item > 0 && e == 2){
+				this.disable_box = true;
+			}
+		}
+		
+		
+    });
+	
+	
+	
+	 app.controller('TransportList', function() {
+		 console.log("Transport List Initialized");
+        this.trans_lists = transport_list;
+        console.log(this.trans_list);
+    });
+	
+	
+	app.controller('ModuleSelect', function(){
+		console.log("Module Select Initialized");
+		this.selectMod = function(opt){
+			$('#transport').removeClass('active1');
+			$('#commission').removeClass('active1');
+			if(opt == 1){
+				$('#transport').addClass('active1');
+			}else{
+				$('#commission').addClass('active1');
+			}
+		}
+		this.nextPage = function(){
 			$('#transport').css('filter','grayscale(100%)');
 			$('#commission').css('filter','grayscale(100%)');
-			$('#page').css('filter','grayscale(0)');
+			$('#page').css('filter','grayscale(100%)');
 				$('#transport').css('cursor','default');
 				$('#commission').css('cursor','default');
 				document.getElementById('transport').style.pointerEvents = 'none';
 				document.getElementById('commission').style.pointerEvents = 'none';
 				$('#page_button').prop('disabled',true);
-				$('#page1').css('display','block');
-					$('html, body').delay(500).animate({
-						scrollTop: $("#page1").offset().top
-					}, 1000);
-		}else{
-			$('#transport').css('border','1px solid red');
-			$('#commission').css('border','1px solid red');
+				$('#page1').fadeIn(1000).show();
+				
+		}
+		
+		this.editPage = function(){
+			$('#page_edit').css('filter','grayscale(0)');
+			$('#transport').css('border','none');
+			$('#commission').css('border','none');
 			$('#transport').css('filter','grayscale(0)');
 			$('#commission').css('filter','grayscale(0)');
-			
 			$('#page').css('filter','grayscale(0)');
 				$('#transport').css('cursor','pointer');
 				$('#commission').css('cursor','pointer');
 				document.getElementById('transport').style.pointerEvents = 'auto';
 				document.getElementById('commission').style.pointerEvents = 'auto';
 				$('#page_button').prop('disabled',false);
-				
 				$('#page1').css('display','none');
 		}
-				});
-	
-	
-	
-  
-  
-  
-  
-  
-  
-    jQuery.validator.addMethod("lettersonly", function(value, element) {
-        return this.optional(element) || /^[a-z0-9_-]+$/i.test(value);
-    }, "Please use only a-z0-9_-");
-    $('#form-signin').submit(function(e) {
-        e.preventDefault();
-    }).validate({
-        rules: {
-            login: {
-                minlength: 3,
-                maxlength: 15,
-                required: true,
-                lettersonly: true
-            },
-            password: {
-                minlength: 3,
-                maxlength: 15,
-                required: true,
-                lettersonly: true
-            }
-        },
-        highlight: function(element) {
-            $(element).closest('.control-group').addClass('has-error');
-        },
-        unhighlight: function(element) {
-            $(element).closest('.control-group').removeClass('has-error');
-        },
-        submitHandler: function(form) {
-            //submit via ajax
-            $('html,body').animate({
-                    scrollTop: $("#status_board").offset().top
-                },
-                'slow');
-
-            $('#landing_left').fadeIn(1000).hide();
-            $('#landing_right').fadeIn(1000).hide();
-            $('#status_board1').slideDown("slow");
-            $('#page').fadeIn(1000).show();
-            $('#footer').fadeIn(1000).show();
-
-            return false; //This doesn't prevent the form from submitting.
-        }
-    });
-
-
-$("#box").blur(function(){
-	if($('#box').val() > 0){
-		$('#cartoon').prop('disabled', true);
-	}else{
-		$('#cartoon').prop('disabled', false);
-	}
-});
-$("#cartoon").blur(function(){
-	if($('#cartoon').val() > 0){
-		$('#cartoon').prop('disabled', true);
-	}else{
-		$('#cartoon').prop('disabled', false);
-	}
-});
-
-    $('#addItem').click(function(e) {
-        e.preventDefault();
-    });
-
-
-
-    $('#box').blur(function() {
-        var number_of_box = $('#box').val();
-        var perCost = $('#perCost').val();
-        var total = number_of_box * perCost;
-        $('#totalCost').val(total);
-    });
-
-
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        console.log("Incompatible");
-        $('#landing_page').css('display','none');
-        $('.mobile_device_error').removeClass('hide');
-    }
-    $("button").submit(function(e) {
-        e.preventDefault();
-
-        var target = e || window.event;
-        var target = e.target || e.srcElement;
-        var divNum = target.id;
-        console.log(divNum);
-        if (divNum == 'submit1' && $('input[type="text"]').hasClass('has-error')) {
-            return;
-        } else {
-            $('html,body').animate({
-                    scrollTop: $("#page1").offset().top
-                },
-                'slow');
-        }
-    });
-
-	
-});
+		
+	});
+})();
