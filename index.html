@@ -176,6 +176,8 @@
 								<th>Cartoon/s</th>
 								<th>Cost per box/cartoon</th>
 								<th>Total Cost</th>
+								<th>Edit</th>
+								<th>Delete</th>
 							</tr>
 							<tbody ng-repeat="trans in trans_list.trans_lists track by $index">
 								<tr>
@@ -185,6 +187,8 @@
 									<td>{{trans.cartoon}}</td>
 									<td>{{trans.preCost}}</td>
 									<td>{{trans.totalCost}}</td>
+									<td><span id='edit'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></td>
+									<td><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
 								</tr>
 								<tr ng-show="item.warning">
 									<td colspan="3" style="text-align: center">Warning !!!</td>
