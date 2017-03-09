@@ -56,6 +56,10 @@
 		 console.log("Transport List Initialized");
         this.trans_lists = transport_list;
         console.log(this.trans_list);
+		 this.deleteEntry = function(index) {
+            transport_list.splice(index, 1);
+            localStorage.setItem('transport_DB', JSON.stringify(transport_list));
+        }
     });
 	
 	
