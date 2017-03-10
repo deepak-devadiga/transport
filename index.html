@@ -176,7 +176,6 @@
 								<th>Cartoon/s</th>
 								<th>Cost per box/cartoon</th>
 								<th>Total Cost</th>
-								<th>Edit</th>
 								<th>Delete</th>
 							</tr>
 							<tbody ng-repeat="trans in trans_list.trans_lists track by $index">
@@ -187,7 +186,6 @@
 									<td>{{trans.cartoon}}</td>
 									<td>{{trans.preCost}}</td>
 									<td>{{trans.totalCost}}</td>
-									<td><span id='edit'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></td>
 									<td><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
 								</tr>
 								<tr ng-show="item.warning">
@@ -196,6 +194,7 @@
 							</tbody>
 						</table>
 					</div> 
+					
                 </div>
                 <div class="tab-pane " id="tab_c">
                     <h4>Pane C</h4>
@@ -238,6 +237,27 @@
 
 <script src='js/app.js'></script>
 <script src='js/controller.js'></script>
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
 
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
 
 </html>
