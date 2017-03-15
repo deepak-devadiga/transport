@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/vendor/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor/zebra_dialog.css" />
 
-    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen"/>
     <!-- CSS PLUGINS SECTION--->
 
 </head>
@@ -165,9 +165,11 @@
                 </div>
                 <div class="tab-pane " id="tab_b">
                     <h4>Transportation List</h4>
-					<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
-					 <div ng-controller='TransportList as trans_list'>
-						
+					<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search"> -->
+					
+					 <div  ng-controller='TransportList as trans_list'>
+					 <div id="print_area">
+					 <div id='image_print'></div>
 						<table id="myTable" datatable="ng" class="table table-hover table-bordered" ng-controller="TransportList as trans_list">
 							<tr class="header">
 								<th>Source</th>
@@ -176,7 +178,7 @@
 								<th>Cartoon/s</th>
 								<th>Cost per box/cartoon</th>
 								<th>Total Cost</th>
-								<th>Delete</th>
+								<th class='noprint'>Delete</th>
 							</tr>
 							<tbody ng-repeat="trans in trans_list.trans_lists track by $index">
 								<tr>
@@ -186,15 +188,13 @@
 									<td>{{trans.cartoon}}</td>
 									<td>{{trans.preCost}}</td>
 									<td>{{trans.totalCost}}</td>
-									<td><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
-								</tr>
-								<tr ng-show="item.warning">
-									<td colspan="3" style="text-align: center">Warning !!!</td>
+									<td class='noprint'><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
 								</tr>
 							</tbody>
 						</table>
+						</div>
 					</div> 
-					
+					<span class='pull-right' id='print_button' style='padding:5px; color:#006600; cursor:pointer' onclick='print()'><i class="fa fa-print" aria-hidden="true"></i> Print</span>
                 </div>
                 <div class="tab-pane " id="tab_c">
                     <h4>Pane C</h4>
@@ -258,6 +258,16 @@ function myFunction() {
     } 
   }
 }
+
+
+function print(){
+  var printContents = document.getElementById('print_area').innerHTML;
+  var popupWin = window.open('', '_blank', 'width=800,height=600');
+  popupWin.document.open();
+  popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="style.css" /><style type="text/css">table th, table td{border:1px solid #e6e6e6;padding:0.5em}.noprint{display:none}</style></head><body onload="window.print()"> <div style="display:inline-block;vertical-align: middle;font-size:2em">Company Name</div><div id="company_logo" style="display:inline-block;align: center;vertical-align: middle;margin-left:55%"><img style="margin-left:50%" src="images/company_logo.png" height=50 width=80></div><hr>' + printContents + '</body></html>');
+  popupWin.document.close();
+} 
+
 </script>
 
 </html>
