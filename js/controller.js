@@ -77,8 +77,8 @@
 		$( "#destination" ).autocomplete({
 		  source: $scope.availableTags
 		});
-	 } 
-	this.update = function(dest){
+		} 
+	this.update = function(){
 		
 	}
 		
