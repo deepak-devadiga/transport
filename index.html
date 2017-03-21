@@ -115,28 +115,20 @@
                     <h4>Transportation Details</h4>
                     <p>Please enter all the transportation details and save it.</p>
                     <form name='transport' class="form-item" method="post" action="" id="form-item" >
-						<div class="row">
-							<div class="input-group date" data-provide="datepicker">
-								<input type="text" id="trans_date" class="form-control" ng-model="trans_details.detail.date" placeholder="dd/mm/yyyy">
-								<div class="input-group-addon">
-									<span class="glyphicon glyphicon-th"></span>
-								</div>
-							</div>
-						</div>
                         <div class='row'>
-                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                            <div class="control-group col-sm-5 col-md-5 col-lg-5">
                                 <label class="control-label" for="source">Source:</label>
                                 <div class="controls">
                                     <input ng-model="trans_details.detail.source" size="50" name="source" id="source" value="" type="text" class="form-control" placeholder="Source">
                                 </div>
                             </div>
-                            <div class="control-group col-sm-4 col-md-4 col-lg-4 ui-widget">
+                            <div class="control-group col-sm-5 col-md-5 col-lg-5 ui-widget">
                                 <label class="control-label" for="destination">Destination:</label>
                                 <div class="controls">
                                     <input ng-model="trans_details.detail.destination" size="50" name="destination" id="destination" value="" type="text" class="form-control" placeholder="Destination" ng-keyup="trans_details.complete()" ng-change="trans_details.update(trans_details.detail.destination)">
                                 </div>
                             </div>
-							 <div class="control-group col-sm-4 col-md-4 col-lg-4 ui-widget">
+							 <div class="control-group col-sm-2 col-md-2 col-lg-2 ui-widget">
                                 <label class="control-label" for="destination">Wing:</label>
                                 <div class="controls">
                                     <input ng-model="trans_details.detail.wing" size="50" name="wing" id="wing" value="" type="text" class="form-control" placeholder="Wing">
@@ -145,24 +137,36 @@
                         </div>
 
                         <div class='row'>
-                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                            <div class="control-group col-sm-3 col-md-3 col-lg-3">
                                 <label class="control-label" for="box">Number of boxes:</label>
                                 <div class="controls">
                                     <input ng-model="trans_details.detail.box" size="5" name="box" id="box" value="" type="number" class="form-control" placeholder="Box" ng-change="trans_details.updatePrice(trans_details.detail.box)">
                                 </div>
                             </div>
-                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                            <div class="control-group col-sm-3 col-md-3 col-lg-3">
                                 <label class="control-label" for="cartoon">Number of Cartoons:</label>
                                 <div class="controls">
                                     <input ng-model="trans_details.detail.cartoon"  size="5" name="cartoon" id="cartoon" value="" type="number" class="form-control" placeholder="Cartoon" ng-change="trans_details.updatePrice(trans_details.detail.cartoon)">
                                 </div>
                             </div>
-                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
+                            <div class="control-group col-sm-3 col-md-3 col-lg-3">
                                 <label class="control-label" for="perCost">Cost per Box/Cartoon:</label>
                                 <div class="controls form-inline" style='margin-top:0px'>
-                                    <i class='fa fa-inr fa-2x' style='margin-top: 10px; position: absolute;z-index: 999;  margin-left: 75px;'></i><input ng-model="trans_details.detail.preCost" size="5" name="perCost" id="perCost" value="" ng-change='trans_details.updatePerCost(trans_details.detail.preCost)' type="text " class="form-control " placeholder="0"  >
+                                    <i class='fa fa-inr fa-2x' style='margin-top: 10px; position: absolute;z-index: 999;  margin-left: 135px;'></i><input ng-model="trans_details.detail.preCost" size="5" name="perCost" id="perCost" value="" ng-change='trans_details.updatePerCost(trans_details.detail.preCost)' type="text " class="form-control " placeholder="0"  style="width:100%">
 								</div>
 							</div>
+							
+							<div class='control-group col-sm-3 col-md-3 col-lg-3'>
+									<label class="control-label" for="source">Date:</label>
+									<div class='input-group date form-inline' id='datetimepicker1'>
+										<input type='text' ng-model="trans_details.detail.date" name="date" id="date" class="form-control" style='margin-bottom:0px'/>
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+							</div>
+							
+							
 						</div>
 						<div class='row'>
 							<div class="control-group col-sm-6 col-md-6 col-lg-6 ">
@@ -188,9 +192,11 @@
 							<tr class="header">
 								<th>Source</th>
 								<th>Destination</th>
+								<th>Wing</th>
 								<th>Box/s</th>
 								<th>Cartoon/s</th>
 								<th>Cost per box/cartoon</th>
+								<th>Date</th>
 								<th>Total Cost</th>
 								<th class='noprint'>Delete</th>
 							</tr>
@@ -198,9 +204,11 @@
 								<tr>
 									<td>{{trans.source}}</td>
 									<td>{{trans.destination}}</td>
+									<td>{{trans.wing}}</td>
 									<td>{{trans.box}}</td>
 									<td>{{trans.cartoon}}</td>
 									<td>{{trans.preCost}}</td>
+									<td>{{trans.date}}</td>
 									<td>{{trans.totalCost}}</td>
 									<td class='noprint'><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
 								</tr>
@@ -219,23 +227,25 @@
 						 <div id='image_print'></div>
 							<table id="myTable1" datatable="ng" class="table table-hover table-bordered" ng-controller="TransportList as trans_list">
 								<tr class="header">
+									<th>Date</th>
 									<th>Source</th>
 									<th>Destination</th>
+									<th>Wing</th>
 									<th>Box/s</th>
 									<th>Cartoon/s</th>
 									<th>Cost per box/cartoon</th>
 									<th>Total Cost</th>
-									<th class='noprint'>Delete</th>
 								</tr>
 								<tbody ng-repeat="trans in trans_list.trans_lists track by $index">
 									<tr>
+										<td>{{trans.date}}</td>
 										<td>{{trans.source}}</td>
 										<td>{{trans.destination}}</td>
+										<td>{{trans.wing}}</td>
 										<td>{{trans.box}}</td>
 										<td>{{trans.cartoon}}</td>
 										<td>{{trans.preCost}}</td>
 										<td>{{trans.totalCost}}</td>
-										<td class='noprint'><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -302,10 +312,19 @@ function myFunction() {
   }
 }
 
-$('#trans_date').datepicker({
-    format: "dd/mm/yyyy",
-    defaultViewDate: { year: 1977, month: 04, day: 25 }
-});
+$(function () {
+                $('#datetimepicker1').datetimepicker({
+             changeMonth: true,
+                            changeYear: true,
+                            format: "dd/mm/yyyy",
+                            startView: 'year',
+                            minView: 'month',
+                            autoclose: true,
+                                mask:'99/99/9999',
+								pickDate: true,
+							pickTime: false
+				});
+            });
 
 
 function print(){
