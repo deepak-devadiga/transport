@@ -35,7 +35,7 @@
     <div class='container-fluid' id='landing_page' style='display:none'>
         <div class='row'>
             <div class='col-sm-7 col-md-7 col-lg-7' id='landing_left'>
-
+			
             </div>
             <div class='col-sm-5 col-md-5 col-lg-5' id='landing_right' ng-controller='LoginController as login_ctrl'>
                 <form name='login' class="form-signin" method="post" action="" id="form-signin" ng-submit='login.$valid && login_ctrl.addLogin()'>
@@ -116,16 +116,22 @@
                     <p>Please enter all the transportation details and save it.</p>
                     <form name='transport' class="form-item" method="post" action="" id="form-item" >
                         <div class='row'>
-                            <div class="control-group col-sm-6 col-md-6 col-lg-6">
+                            <div class="control-group col-sm-4 col-md-4 col-lg-4">
                                 <label class="control-label" for="source">Source:</label>
                                 <div class="controls">
                                     <input ng-model="trans_details.detail.source" size="50" name="source" id="source" value="" type="text" class="form-control" placeholder="Source">
                                 </div>
                             </div>
-                            <div class="control-group col-sm-6 col-md-6 col-lg-6">
+                            <div class="control-group col-sm-4 col-md-4 col-lg-4 ui-widget">
                                 <label class="control-label" for="destination">Destination:</label>
                                 <div class="controls">
-                                    <input ng-model="trans_details.detail.destination" size="50" name="destination" id="destination" value="" type="text" class="form-control" placeholder="Destination">
+                                    <input ng-model="trans_details.detail.destination" size="50" name="destination" id="destination" value="" type="text" class="form-control" placeholder="Destination" ng-keyup="trans_details.complete()" ng-change="trans_details.update(trans_details.detail.destination)">
+                                </div>
+                            </div>
+							 <div class="control-group col-sm-4 col-md-4 col-lg-4 ui-widget">
+                                <label class="control-label" for="destination">Wing:</label>
+                                <div class="controls">
+                                    <input ng-model="trans_details.detail.wing" size="50" name="wing" id="wing" value="" type="text" class="form-control" placeholder="Wing">
                                 </div>
                             </div>
                         </div>
