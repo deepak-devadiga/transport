@@ -115,6 +115,14 @@
                     <h4>Transportation Details</h4>
                     <p>Please enter all the transportation details and save it.</p>
                     <form name='transport' class="form-item" method="post" action="" id="form-item" >
+						<div class="row">
+							<div class="input-group date" data-provide="datepicker">
+								<input type="text" id="trans_date" class="form-control" ng-model="trans_details.detail.date" placeholder="dd/mm/yyyy">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div>
+						</div>
                         <div class='row'>
                             <div class="control-group col-sm-4 col-md-4 col-lg-4">
                                 <label class="control-label" for="source">Source:</label>
@@ -171,7 +179,7 @@
                 </div>
                 <div class="tab-pane " id="tab_b">
                     <h4>Transportation List</h4>
-					<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search"> -->
+					<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
 					
 					 <div  ng-controller='TransportList as trans_list'>
 					 <div id="print_area">
@@ -205,6 +213,34 @@
                 <div class="tab-pane " id="tab_c">
                     <h4>Pane C</h4>
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					<input type="text" id="myInput1" onkeyup="myFunction()" placeholder="Search"> 
+					 <div  ng-controller='TransportList as trans_list'>
+						 <div id="print_area">
+						 <div id='image_print'></div>
+							<table id="myTable1" datatable="ng" class="table table-hover table-bordered" ng-controller="TransportList as trans_list">
+								<tr class="header">
+									<th>Source</th>
+									<th>Destination</th>
+									<th>Box/s</th>
+									<th>Cartoon/s</th>
+									<th>Cost per box/cartoon</th>
+									<th>Total Cost</th>
+									<th class='noprint'>Delete</th>
+								</tr>
+								<tbody ng-repeat="trans in trans_list.trans_lists track by $index">
+									<tr>
+										<td>{{trans.source}}</td>
+										<td>{{trans.destination}}</td>
+										<td>{{trans.box}}</td>
+										<td>{{trans.cartoon}}</td>
+										<td>{{trans.preCost}}</td>
+										<td>{{trans.totalCost}}</td>
+										<td class='noprint'><span id='delete' ng-click='trans_list.deleteEntry($index)'><i class="fa fa-trash" aria-hidden="true"></i></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div> 
                 </div>
                 <div class="tab-pane " id="tab_d">
                     <h4>Pane D</h4>
@@ -235,10 +271,11 @@
     </div>
 </body>
 <script src='js/vendor/jquery.js'></script>
-<script src='js/vendor/bootstrap.js'></script>
+<script src='js/vendor/bootstrap.min.js'></script>
 <script src='js/vendor/jquery-ui.js'></script>
 <script src='js/vendor/angular.min.js'></script>
 <script src='js/vendor/jquery.validate.min.js'></script>
+<script src='js/vendor/bootstrap-datetimepicker.js'></script>
 
 
 <script src='js/app.js'></script>
@@ -247,9 +284,9 @@
 function myFunction() {
   // Declare variables 
   var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
+  input = document.getElementById("myInput1");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  table = document.getElementById("myTable1");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
@@ -264,6 +301,11 @@ function myFunction() {
     } 
   }
 }
+
+$('#trans_date').datepicker({
+    format: "dd/mm/yyyy",
+    defaultViewDate: { year: 1977, month: 04, day: 25 }
+});
 
 
 function print(){
