@@ -84,7 +84,7 @@ $(window).on('load', function() {
 
             $('#landing_left').fadeIn(1000).hide();
             $('#landing_right').fadeIn(1000).hide();
-            $('#status_board1').slideDown("slow");
+            $('#status_board1').slideDown(500);
             $('#page').fadeIn(1000).show();
             $('#footer').fadeIn(1000).show();
 
@@ -102,7 +102,7 @@ $("#box").blur(function(){
 });
 $("#cartoon").blur(function(){
 	if($('#cartoon').val() > 0){
-		$('#cartoon').prop('disabled', true);
+		$('#box').prop('disabled', true);
 	}else{
 		$('#cartoon').prop('disabled', false);
 	}
